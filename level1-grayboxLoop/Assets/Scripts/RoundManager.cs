@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -45,22 +44,22 @@ public class RoundManager : MonoBehaviour
     {
         if (finished) return;
 
-    hp -= d;
-    Debug.Log("Lives left: " + hp);
+        hp -= d;
+        Debug.Log("Lives left: " + hp);
 
-    if (hp <= 0)
-    {
-        Lose();
-    }
+        if (hp <= 0)
+        {
+            Lose();
+        }
     }
 
     public void FallOut()
-{
-    if (finished) return;
-    finished = true;
-    Debug.Log("Fell out of level, restarting");
-    Invoke("Restart", 1f);
-}
+    {
+        if (finished) return;
+        finished = true;
+        Debug.Log("Fell out of level, restarting");
+        Invoke("Restart", 1f);
+    }
 
     public void Lose()
     {

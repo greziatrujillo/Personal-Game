@@ -10,8 +10,10 @@ public class Exit : MonoBehaviour
         if (manager == null) return;
 
         if (manager.AllKeysCollected)
+        {
             manager.CompleteLevel();
-        else
+            other.gameObject.SetActive(false);
+        } else
             Debug.Log("Must collect all keys to complete level");
     }
 }

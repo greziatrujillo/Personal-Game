@@ -34,4 +34,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed exit point (11/19/2026).
 - Added no friction to stop player from getting stuck on the side of the platform (11/19/2026).
+- Fixed camera limits and settings (11/19/2026).
 

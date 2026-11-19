@@ -7,7 +7,9 @@ public class Keys : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Key Collected!");
+            RoundManager manager = Object.FindFirstObjectByType<RoundManager>();
+            if (manager != null) manager.CollectKeys();
+
             gameObject.SetActive(false);
         }
     }

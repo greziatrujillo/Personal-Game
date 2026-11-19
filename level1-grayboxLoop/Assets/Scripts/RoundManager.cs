@@ -43,8 +43,25 @@ public class RoundManager : MonoBehaviour
 
     public void ReceiveDamage(int d)
     {
-        hp -= d;
+        if (finished) return;
+
+    hp -= d;
+    Debug.Log("Lives left: " + hp);
+
+    if (hp <= 0)
+    {
+        Lose();
     }
+    }
+
+    public void FallOut()
+{
+    if (finished) return;
+    finished = true;
+    Debug.Log("Fell out of view, restarting");
+    Invoke("Restart", 1.5f);
+}
+
     public void Lose()
     {
         if (finished) return;

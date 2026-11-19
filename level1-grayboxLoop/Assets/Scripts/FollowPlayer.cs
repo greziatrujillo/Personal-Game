@@ -8,7 +8,7 @@ public class FollowPlayer : MonoBehaviour
 
     //camera limits
     public float minZ = 20f;
-    public float maxZ = 360f;
+    public float maxZ = 340f;
     public float minY = 45f;
     public float maxY = 80f;
 

@@ -17,5 +17,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add player cube (11/18/2026).
 - Add collectible object cubes (11/18/2026).
 - Add enemy/obstacle cubes (11/18/2026).
+- Add round manager (11/19/2026).
+- Add collect key counter (11/19/2026).
+- Add exit which is available once all keys are collected (11/19/2026).
+
+
+### Changed
+
+- Add life counter (11/19/2026).
+- Change touching obstacle to decrease HP and not immediately lose (11/19/2026).
 
 

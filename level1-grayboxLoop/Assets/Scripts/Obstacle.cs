@@ -21,7 +21,7 @@ public class Obstacle : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             RoundManager manager = Object.FindFirstObjectByType<RoundManager>();
-            if (manager != null) manager.Lose();
+            if (manager != null) manager.ReceiveDamage(1);
         }
     }
 }

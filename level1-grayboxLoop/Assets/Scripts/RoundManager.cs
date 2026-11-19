@@ -12,6 +12,7 @@ public class RoundManager : MonoBehaviour
 
     private int collected = 0;
     private bool finished = false;
+    public int hp = 3;
 
     public bool AllKeysCollected
     {
@@ -40,6 +41,10 @@ public class RoundManager : MonoBehaviour
         
     }
 
+    public void ReceiveDamage(int d)
+    {
+        hp -= d;
+    }
     public void Lose()
     {
         if (finished) return;

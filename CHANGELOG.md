@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add round manager (11/19/2026).
 - Add collect key counter (11/19/2026).
 - Add exit which is available once all keys are collected (11/19/2026).
+- Add barriers when falling out of level (11/19/2026).
+- Add trigger to restart level when falling (11/19/2026).
 
 
 ### Changed

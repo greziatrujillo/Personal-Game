@@ -7,7 +7,7 @@ public class FollowPlayer : MonoBehaviour
     public float smoothTime = 0.15f;
 
     //camera limits
-    public float minZ = 20f;
+    public float minZ = -2f;
     public float maxZ = 340f;
     public float minY = 45f;
     public float maxY = 80f;

@@ -58,8 +58,8 @@ public class RoundManager : MonoBehaviour
 {
     if (finished) return;
     finished = true;
-    Debug.Log("Fell out of view, restarting");
-    Invoke("Restart", 1.5f);
+    Debug.Log("Fell out of level, restarting");
+    Invoke("Restart", 1f);
 }
 
     public void Lose()

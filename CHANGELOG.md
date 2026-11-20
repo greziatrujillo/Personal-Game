@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add moving obstacles (11/19/2026).
 - Add key models (11/19/2026).
 - Add spinning object script (11/19/2026).
+- Add obstacle models (11/19/2026).
 
 
 ### Changed

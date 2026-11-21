@@ -9,8 +9,13 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private AudioClip menuSelectClip;
     public void PressStartGame()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("SampleScene"); 
         SoundFXManager.instance.PlaySoundFxClip(menuSelectClip, transform);
+        Time.timeScale = 1f;
+        Invoke(nameof(LoadGame), 0.3f);
+    }
+
+    private void LoadGame()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }

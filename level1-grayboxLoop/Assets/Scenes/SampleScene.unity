@@ -268,6 +268,16 @@ MonoBehaviour:
   groundRadius: 0.2
   maxFallingVelocity: 6
   gravityMultiplier: 0.6
+  footstepClips:
+  - {fileID: 8300000, guid: 0d52507197bf5204c929cba8210b4424, type: 3}
+  - {fileID: 8300000, guid: 960bf73d98b304646bb4fb1e8cb736ed, type: 3}
+  - {fileID: 8300000, guid: 66f7d1f961eb77841b0f7c340867ffeb, type: 3}
+  - {fileID: 8300000, guid: ce8242aa6fd26c949ba7e7fb4dcee677, type: 3}
+  jumpClip: {fileID: 8300000, guid: ba42da319de7d4249b02376c653d61bf, type: 3}
+  stepInterval: 0.37
+  footstepVolume: 0.4
+  jumpVolume: 0.7
+  pitchVariation: 0.1
 --- !u!54 &20991357
 Rigidbody:
   m_ObjectHideFlags: 0

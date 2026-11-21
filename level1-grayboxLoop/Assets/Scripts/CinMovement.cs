@@ -27,6 +27,15 @@ public class CinMovement : MonoBehaviour
     private Animator animator;
     private Vector3 movement;
 
+    // audio
+    [SerializeField] private AudioClip[] footstepClips;
+    [SerializeField] private AudioClip jumpClip;
+    [SerializeField] private float stepInterval = 0.37f;
+    [SerializeField, Range(0f, 1f)] private float footstepVolume = 0.4f;
+    [SerializeField, Range(0f, 1f)] private float jumpVolume = 0.7f;
+    [SerializeField, Range(0f, 0.3f)] private float pitchVariation = 0.1f;
+    private float stepTimer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -49,13 +58,32 @@ public class CinMovement : MonoBehaviour
         movement = new Vector3(0f, 0f, inputZ).normalized;
 
         if (animator != null)
+        {
             animator.SetFloat("velocity", Mathf.Abs(inputZ));
             animator.SetBool("grounded", onGround);
             animator.SetFloat("yVelocity", rb.linearVelocity.y);
+        }
 
         if (model != null && movement.sqrMagnitude > 0.01f)
             model.rotation = Quaternion.Slerp(
                 model.rotation, Quaternion.LookRotation(movement), turnSpeed * Time.deltaTime);
+
+        //footsteps
+        bool isWalking = Mathf.Abs(inputZ) > 0.1f && onGround;
+
+        if (isWalking)
+        {
+            stepTimer -= Time.deltaTime;
+            if (stepTimer <= 0f)
+            {
+                SoundFXManager.instance.PlayRandomSoundFxClip(footstepClips, transform, footstepVolume, pitchVariation);
+                stepTimer = stepInterval;
+            }
+        }
+        else
+        {
+            stepTimer = 0f;
+        }
     }
 
     void FixedUpdate()   
@@ -74,7 +102,10 @@ public class CinMovement : MonoBehaviour
 
         // jump mechanic 
         if (jumpInput && onGround)
+        {
             vel.y = jumpForce;
+            SoundFXManager.instance.PlaySoundFxClip(jumpClip, transform, jumpVolume, pitchVariation);
+        }
 
         jumpInput = false;
 

@@ -5,6 +5,8 @@ public class CinMovement : MonoBehaviour
 {
     // movement
     public float velocity = 15f;
+    public Transform model;
+    public float turnSpeed = 12f;
 
     // jump mechanics
     public KeyCode jumpKey = KeyCode.Space;
@@ -22,14 +24,19 @@ public class CinMovement : MonoBehaviour
     private float inputZ;
     private bool onGround;
     private bool jumpInput;
+    private Animator animator;
+    private Vector3 movement;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
-        rb.freezeRotation = true; 
         rb.useGravity = false;
         rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotation;
+        animator = GetComponentInChildren<Animator>();
+
+        if (model == null && animator != null)
+            model = animator.transform;
     }
 
     void Update()
@@ -38,6 +45,17 @@ public class CinMovement : MonoBehaviour
 
         if (Input.GetKeyDown(jumpKey))
             jumpInput = true;
+
+        movement = new Vector3(0f, 0f, inputZ).normalized;
+
+        if (animator != null)
+            animator.SetFloat("velocity", Mathf.Abs(inputZ));
+            animator.SetBool("grounded", onGround);
+            animator.SetFloat("yVelocity", rb.linearVelocity.y);
+
+        if (model != null && movement.sqrMagnitude > 0.01f)
+            model.rotation = Quaternion.Slerp(
+                model.rotation, Quaternion.LookRotation(movement), turnSpeed * Time.deltaTime);
     }
 
     void FixedUpdate()   
@@ -49,7 +67,7 @@ public class CinMovement : MonoBehaviour
 
         // custom gravity
         float gravityMult = vel.y > 0f ? riseGravityMultiplier : gravityMultiplier;
-        rb.AddForce(Physics.gravity * gravityMult, ForceMode.Acceleration);
+        vel.y += Physics.gravity.y * gravityMult * Time.fixedDeltaTime;
 
         //horizontal movement
         vel.z = inputZ * velocity;
@@ -65,6 +83,8 @@ public class CinMovement : MonoBehaviour
             vel.y = -maxFallingVelocity;
 
         rb.linearVelocity = vel;
+
+
     }
 
     // shows ground check in scene view

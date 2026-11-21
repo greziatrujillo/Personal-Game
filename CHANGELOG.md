@@ -28,6 +28,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add obstacle models (11/19/2026).
 - Add exit point door (11/19/2026).
 - Add platform texture (11/19/2026).
+- add character model (11/20/2026).
+- Add character animation (11/20/2026).
+- Add lighting effects (11/20/2026).
+- Add Pause button and menu (11/20/2026).
 
 
 ### Changed

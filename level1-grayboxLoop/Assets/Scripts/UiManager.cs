@@ -1,6 +1,5 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 
 /// <summary>
 /// Manage any ui available to the player
@@ -8,6 +7,9 @@ using System.Collections.Generic;
 public class UiManager : MonoBehaviour
 {
     public GameObject pauseUI;
+    public TextMeshProUGUI keysText;
+    public TextMeshProUGUI hpText;
+
     public void PressPause()
     {
         pauseUI.SetActive(true);
@@ -18,8 +20,20 @@ public class UiManager : MonoBehaviour
         pauseUI.SetActive(false);
     }
 
-    public void PressExitGame()
+    public void PressExitToMenu()
     {
-        Application.Quit();
+        
     }
+
+    public void UpdateKeys(int current, int max)
+    {
+        keysText.text = "Keys " + current + "/" + max;
+    }
+
+    public void UpdateHp(int current, int max)
+    {
+        hpText.text = "HP " + current + "/" + max;
+    }
+
+
 }

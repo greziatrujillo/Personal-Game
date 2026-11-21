@@ -32,16 +32,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add character animation (11/20/2026).
 - Add lighting effects (11/20/2026).
 - Add Pause button and menu (11/20/2026).
+- Add keys collected in HUD (11/20/2026).
+- Add health remaining in HUD (11/20/2026).
 
 
 ### Changed
 
 - Add life counter (11/19/2026).
 - Change touching obstacle to decrease HP and not immediately lose (11/19/2026).
+- Change the roundmanager logic (11/20/2026).
 
 ### Fixed 
 
 - Fixed exit point (11/19/2026).
 - Added no friction to stop player from getting stuck on the side of the platform (11/19/2026).
 - Fixed camera limits and settings (11/19/2026).
+- Pause menu button texts (11/20/2026).
 

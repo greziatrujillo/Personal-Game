@@ -15,6 +15,13 @@ public class RoundManager : MonoBehaviour
     private bool finished = false;
     private int maxHp;
 
+    [SerializeField] private AudioClip collectKeyClip;
+    [SerializeField] private AudioClip receiveDamageClip;
+    [SerializeField] private AudioClip fallOffClip;
+    [SerializeField] private AudioClip completeLevelClip;
+    [SerializeField] private AudioClip loseLevelClip;
+    [SerializeField] private AudioSource backgroundMusicSource;
+
     void Start()
     {
         maxHp = hp;
@@ -29,12 +36,16 @@ public class RoundManager : MonoBehaviour
         collected++;
         UiManager.UpdateKeys(collected, keys);
 
+        SoundFXManager.instance.PlaySoundFxClip(collectKeyClip, transform);
+
     }
 
     public void CompleteLevel()
     {
         if (finished) return;
         finished = true;
+        if (backgroundMusicSource != null) backgroundMusicSource.Stop();
+        SoundFXManager.instance.PlaySoundFxClip(completeLevelClip, transform);
         
     }
 
@@ -50,13 +61,15 @@ public class RoundManager : MonoBehaviour
         {
             Lose();
         }
+
+        SoundFXManager.instance.PlaySoundFxClip(receiveDamageClip, transform, 500f);
     }
 
     public void FallOut()
     {
         if (finished) return;
         finished = true;
-        Debug.Log("Fell out of level, restarting");
+        SoundFXManager.instance.PlaySoundFxClip(fallOffClip, transform);
         Invoke("Restart", 1f);
     }
 
@@ -64,7 +77,7 @@ public class RoundManager : MonoBehaviour
     {
         if (finished) return;
         finished = true;
-        Debug.Log("You lost");
+        SoundFXManager.instance.PlaySoundFxClip(loseLevelClip, transform, 0.5f);
         Invoke("Restart", 1.5f);
         
     }

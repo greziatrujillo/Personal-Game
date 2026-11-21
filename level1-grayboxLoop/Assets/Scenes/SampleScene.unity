@@ -10551,6 +10551,8 @@ MonoBehaviour:
   collectKeyClip: {fileID: 8300000, guid: 6d69e986a58ff3f468ecaa4ba2819b2e, type: 3}
   receiveDamageClip: {fileID: 8300000, guid: c229d30a3da44744f816257c5cf5cbbf, type: 3}
   fallOffClip: {fileID: 8300000, guid: f004e94a45d553b4db66a6238d3c0b67, type: 3}
+  completeLevelClip: {fileID: 8300000, guid: 53a8b480e08bfda40bbc90e5a4949cc2, type: 3}
+  loseLevelClip: {fileID: 8300000, guid: 417da11daa5d9804092c5cfece67903c, type: 3}
 --- !u!4 &1855072326
 Transform:
   m_ObjectHideFlags: 0

@@ -62,7 +62,7 @@ public class RoundManager : MonoBehaviour
             Lose();
         }
 
-        SoundFXManager.instance.PlaySoundFxClip(receiveDamageClip, transform, 20f);
+        SoundFXManager.instance.PlaySoundFxClip(receiveDamageClip, transform, 500f);
     }
 
     public void FallOut()

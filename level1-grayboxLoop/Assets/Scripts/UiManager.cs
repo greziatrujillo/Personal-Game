@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Manage any ui available to the player
@@ -22,7 +23,8 @@ public class UiManager : MonoBehaviour
 
     public void PressExitToMenu()
     {
-        
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void UpdateKeys(int current, int max)

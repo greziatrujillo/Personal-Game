@@ -34,6 +34,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add Pause button and menu (11/20/2026).
 - Add keys collected in HUD (11/20/2026).
 - Add health remaining in HUD (11/20/2026).
+- Add main menu scene (11/21/2026).
+- Add main menu logic (11/21/2026).
 
 
 ### Changed
@@ -48,4 +50,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added no friction to stop player from getting stuck on the side of the platform (11/19/2026).
 - Fixed camera limits and settings (11/19/2026).
 - Pause menu button texts (11/20/2026).
+- Pause menu exit button wired (11/21/2026).
 

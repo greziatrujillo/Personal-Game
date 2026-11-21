@@ -275,8 +275,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ce8242aa6fd26c949ba7e7fb4dcee677, type: 3}
   jumpClip: {fileID: 8300000, guid: ba42da319de7d4249b02376c653d61bf, type: 3}
   stepInterval: 0.37
-  footstepVolume: 0.4
-  jumpVolume: 0.7
+  footstepVolume: 0.6
+  jumpVolume: 0.543
   pitchVariation: 0.1
 --- !u!54 &20991357
 Rigidbody:
@@ -8608,6 +8608,7 @@ GameObject:
   - component: {fileID: 1554079797}
   - component: {fileID: 1554079796}
   - component: {fileID: 1554079795}
+  - component: {fileID: 1554079799}
   m_Layer: 0
   m_Name: Back Wall
   m_TagString: Untagged
@@ -8709,6 +8710,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1836284079}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!82 &1554079799
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554079794}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: debe72b14a4592545933b453296c0426, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.208
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 193
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1565643368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1fe73362c287b534f9b8818f5acca49d, type: 3}
@@ -10553,6 +10651,7 @@ MonoBehaviour:
   fallOffClip: {fileID: 8300000, guid: f004e94a45d553b4db66a6238d3c0b67, type: 3}
   completeLevelClip: {fileID: 8300000, guid: 53a8b480e08bfda40bbc90e5a4949cc2, type: 3}
   loseLevelClip: {fileID: 8300000, guid: 417da11daa5d9804092c5cfece67903c, type: 3}
+  backgroundMusicSource: {fileID: 1554079799}
 --- !u!4 &1855072326
 Transform:
   m_ObjectHideFlags: 0

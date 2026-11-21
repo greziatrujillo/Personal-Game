@@ -20,6 +20,7 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private AudioClip fallOffClip;
     [SerializeField] private AudioClip completeLevelClip;
     [SerializeField] private AudioClip loseLevelClip;
+    [SerializeField] private AudioSource backgroundMusicSource;
 
     void Start()
     {
@@ -43,6 +44,7 @@ public class RoundManager : MonoBehaviour
     {
         if (finished) return;
         finished = true;
+        if (backgroundMusicSource != null) backgroundMusicSource.Stop();
         SoundFXManager.instance.PlaySoundFxClip(completeLevelClip, transform);
         
     }
@@ -60,7 +62,7 @@ public class RoundManager : MonoBehaviour
             Lose();
         }
 
-        SoundFXManager.instance.PlaySoundFxClip(receiveDamageClip, transform);
+        SoundFXManager.instance.PlaySoundFxClip(receiveDamageClip, transform, 20f);
     }
 
     public void FallOut()

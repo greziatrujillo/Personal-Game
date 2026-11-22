@@ -27,8 +27,8 @@ public class UiManager : MonoBehaviour
     public void PressExitToMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
         SoundFXManager.instance.PlaySoundFxClip(menuSelectClip, transform);
+        SceneLoader.Load("MainMenu");
     }
 
     public void UpdateKeys(int current, int max)

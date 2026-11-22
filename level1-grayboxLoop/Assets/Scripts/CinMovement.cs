@@ -50,6 +50,8 @@ public class CinMovement : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) return;
+        
         inputZ = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetKeyDown(jumpKey))

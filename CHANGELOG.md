@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.1] - UNRELEASED
 
 ### Added
+- Added level title and info pop up before the level starts (11/21/2026).
 
 ### Changed
 - Changed the main menu game title (11/21/2026).

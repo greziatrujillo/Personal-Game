@@ -37,6 +37,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add main menu scene (11/21/2026).
 - Add main menu logic (11/21/2026).
 - Add loop and one time sfx (11/21/2026).
+- Add loading screen (11/21/2026).
+- Once the level is complete, loaded back to main menu (11/21/2026).
 
 
 ### Changed

@@ -46,7 +46,14 @@ public class RoundManager : MonoBehaviour
         finished = true;
         if (backgroundMusicSource != null) backgroundMusicSource.Stop();
         SoundFXManager.instance.PlaySoundFxClip(completeLevelClip, transform);
-        
+
+        float delay = completeLevelClip != null ? completeLevelClip.length : 0f;
+        Invoke(nameof(LoadNextScene), delay + 0.5f);
+    }
+
+    private void LoadNextScene()
+    {
+        SceneLoader.Load("MainMenu");
     }
 
     public void ReceiveDamage(int d)

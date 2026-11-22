@@ -4,7 +4,7 @@ using UnityEngine;
 /// player 2 movement script
 /// </summary>
 /// 
-public class KiraPlayer : MonoBehaviour
+public class KiraMovement : MonoBehaviour
 {
     // movement
     public float velocity = 15f;
@@ -19,6 +19,9 @@ public class KiraPlayer : MonoBehaviour
     public float groundRadius = 0.2f;
 
     // double jump
+    public int extraJumps = 1;
+    [SerializeField] private AudioClip doubleJumpClip;
+    private int jumpsRemaining;
 
     private Rigidbody rb;
     private float inputZ;
@@ -49,6 +52,12 @@ public class KiraPlayer : MonoBehaviour
 
     void Update()
     {
+
+        if (animator != null)
+        {
+            animator.SetFloat("velocity", Mathf.Abs(inputZ));
+        }
+
         if (Time.timeScale == 0f) return;
         
         inputZ = Input.GetAxisRaw("Horizontal");
@@ -90,14 +99,27 @@ public class KiraPlayer : MonoBehaviour
         //horizontal movement
         vel.z = inputZ * velocity;
 
+        if (onGround && vel.y <= 0.1f)
+            jumpsRemaining = extraJumps;
+
         // jump mechanic 
-        if (jumpInput && onGround)
+        if (jumpInput) 
         {
-            vel.y = jumpForce;
-            SoundFXManager.instance.PlaySoundFxClip(jumpClip, transform, jumpVolume, pitchVariation);
+            if (onGround)
+            {
+                vel.y = jumpForce;
+                SoundFXManager.instance.PlaySoundFxClip(jumpClip, transform, jumpVolume, pitchVariation);
+            }
+            else if (jumpsRemaining > 0)
+            {
+                jumpsRemaining--;
+                vel.y = jumpForce;
+                SoundFXManager.instance.PlaySoundFxClip(jumpClip, transform, jumpVolume, pitchVariation);
+            } 
         }
 
         jumpInput = false;
+        rb.linearVelocity = vel;
 
     }
 

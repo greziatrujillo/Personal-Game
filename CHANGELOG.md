@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Changed the main menu game title (11/21/2026).
+- Changed the HUD font inside the level (11/21/2026).
 
 ### Fixed
 

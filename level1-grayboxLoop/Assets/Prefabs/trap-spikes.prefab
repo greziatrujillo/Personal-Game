@@ -60,16 +60,72 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 89fd6b84df1c98a42a03cf2b7790bb7b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6210141383899247147, guid: 89fd6b84df1c98a42a03cf2b7790bb7b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: -6210141383899247147, guid: 89fd6b84df1c98a42a03cf2b7790bb7b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.057
+      value: -0.109
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 89fd6b84df1c98a42a03cf2b7790bb7b, type: 3}
       propertyPath: m_Name
       value: trap-spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89fd6b84df1c98a42a03cf2b7790bb7b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 89fd6b84df1c98a42a03cf2b7790bb7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4091803240688578505}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 89fd6b84df1c98a42a03cf2b7790bb7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 371635048739770033}
   m_SourcePrefab: {fileID: 100100000, guid: 89fd6b84df1c98a42a03cf2b7790bb7b, type: 3}
+--- !u!1 &7952178914313368633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 89fd6b84df1c98a42a03cf2b7790bb7b, type: 3}
+  m_PrefabInstance: {fileID: 7105195076555557224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4091803240688578505
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7952178914313368633}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6392003, y: 0.085, z: 0.6375}
+  m_Center: {x: 0.00085018575, y: 0.0425, z: 0}
+--- !u!114 &371635048739770033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7952178914313368633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51108da754ef9224e82afb18e8aecb7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle

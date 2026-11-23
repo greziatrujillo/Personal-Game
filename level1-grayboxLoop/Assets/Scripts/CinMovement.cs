@@ -62,8 +62,6 @@ public class CinMovement : MonoBehaviour
         if (animator != null)
         {
             animator.SetFloat("velocity", Mathf.Abs(inputZ));
-            animator.SetBool("grounded", onGround);
-            animator.SetFloat("yVelocity", rb.linearVelocity.y);
         }
 
         if (model != null && movement.sqrMagnitude > 0.01f)

@@ -5,12 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), 
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.0] - UNRELEASED
+## [0.1.0] - (11/22/2026)
 
 ### Added
 - Added level 2 setup (11/21/2026).
+- Level 2 obstacles, models and keys (11/22/2026).
+- Screen transition (11/22/2026).
+- Added loading screen (11/22/2026).
+- Added level 3 setup (11/22/2026).
+- Added level 3 obstacles, models and keys (11/22/2026).
+- Added final screen (11/22/2026).
+- Entire process connection (11/22/2026).
+- Added patroling enemies (11/22/2026).
+- Added final screen celebratory sound (11/22/2026).
 
 ### Changed
+- Changed some camera views throughout the levels already set up (11/22/2026).
 
 ## [0.0.1] - 11/21/2026
 

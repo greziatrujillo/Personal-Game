@@ -346,7 +346,7 @@ MonoBehaviour:
   levelIntro: {fileID: 1437285215}
   titleText: {fileID: 1437285211}
   descriptionText: {fileID: 1437285210}
-  levelTitle: Level - 3 Hibi
+  levelTitle: Level 3 - Hibi
   levelDescription: This character has slow falling. When jumping, you will automatically
     fall slower, allowing you to glide and land safely.
 --- !u!4 &728547711
@@ -422,7 +422,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.8392157, g: 0.8639911, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -564,19 +564,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1860393274}
     m_Modifications:
     - target: {fileID: 749595037909794760, guid: f6c95e308d0176e4eb7f3edd79a37900, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 299.97397
       objectReference: {fileID: 0}
     - target: {fileID: 749595037909794760, guid: f6c95e308d0176e4eb7f3edd79a37900, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.02
+      value: -64.9095
       objectReference: {fileID: 0}
     - target: {fileID: 749595037909794760, guid: f6c95e308d0176e4eb7f3edd79a37900, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -414.58
+      value: -575.18414
       objectReference: {fileID: 0}
     - target: {fileID: 749595037909794760, guid: f6c95e308d0176e4eb7f3edd79a37900, type: 3}
       propertyPath: m_LocalRotation.w
@@ -615,6 +615,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6c95e308d0176e4eb7f3edd79a37900, type: 3}
+--- !u!4 &1297618155 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 749595037909794760, guid: f6c95e308d0176e4eb7f3edd79a37900, type: 3}
+  m_PrefabInstance: {fileID: 1297618154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1397746144
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,11 +724,69 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6912358492137094127, guid: 8d2b5b6e18f78f644af87ffe7e529bab, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3791436096555301289, guid: 8d2b5b6e18f78f644af87ffe7e529bab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1420688354}
   m_SourcePrefab: {fileID: 100100000, guid: 8d2b5b6e18f78f644af87ffe7e529bab, type: 3}
+--- !u!1 &1420688351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3791436096555301289, guid: 8d2b5b6e18f78f644af87ffe7e529bab, type: 3}
+  m_PrefabInstance: {fileID: 1420688350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1420688352 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9160704534094439220, guid: 8d2b5b6e18f78f644af87ffe7e529bab, type: 3}
+  m_PrefabInstance: {fileID: 1420688350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1420688353 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7754489533381438347, guid: 8d2b5b6e18f78f644af87ffe7e529bab, type: 3}
+  m_PrefabInstance: {fileID: 1420688350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1420688354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420688351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53a5c53614650742ac0c9a6afd168b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HibiMovement
+  velocity: 15
+  model: {fileID: 0}
+  turnSpeed: 12
+  jumpKey: 32
+  jumpForce: 10
+  checkGround: {fileID: 1420688352}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  groundRadius: 0.2
+  dashKey: 304
+  dashSpeed: 25
+  dashDuration: 0.5
+  dashCooldown: 0.6
+  maxAirDashes: 1
+  dashClip: {fileID: 8300000, guid: 86f0b27728ea3d24f8bc10fec9fc060f, type: 3}
+  dashVolume: 0.8
+  footstepClips:
+  - {fileID: 8300000, guid: 0d52507197bf5204c929cba8210b4424, type: 3}
+  - {fileID: 8300000, guid: 66f7d1f961eb77841b0f7c340867ffeb, type: 3}
+  - {fileID: 8300000, guid: ce8242aa6fd26c949ba7e7fb4dcee677, type: 3}
+  - {fileID: 8300000, guid: 960bf73d98b304646bb4fb1e8cb736ed, type: 3}
+  jumpClip: {fileID: 8300000, guid: ba42da319de7d4249b02376c653d61bf, type: 3}
+  stepInterval: 0.37
+  footstepVolume: 0.6
+  jumpVolume: 0.54
+  pitchVariation: 0.1
 --- !u!1001 &1437285209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -847,6 +910,14 @@ PrefabInstance:
     - target: {fileID: 6782919599994838385, guid: c273ca4e232264f4bbaf965b43992501, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PressReturnToGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064405298978922462, guid: c273ca4e232264f4bbaf965b43992501, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1397746146}
+    - target: {fileID: 7064405298978922462, guid: c273ca4e232264f4bbaf965b43992501, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PressPause
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1025,7 +1096,7 @@ MonoBehaviour:
   fallOffClip: {fileID: 8300000, guid: f004e94a45d553b4db66a6238d3c0b67, type: 3}
   completeLevelClip: {fileID: 8300000, guid: 53a8b480e08bfda40bbc90e5a4949cc2, type: 3}
   loseLevelClip: {fileID: 8300000, guid: 417da11daa5d9804092c5cfece67903c, type: 3}
-  backgroundMusicSource: {fileID: 0}
+  backgroundMusicSource: {fileID: 1944232963}
   nextLevel: FinalScreen
 --- !u!1 &1573803057
 GameObject:
@@ -1132,11 +1203,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d66fdd7916c5344a8a1362e8511acbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowPlayer
-  player: {fileID: 0}
+  player: {fileID: 1420688353}
   smoothTime: 0.15
   minZ: -384
   maxZ: 340
-  minY: 45
+  minY: 30
   maxY: 80
 --- !u!1001 &1801037513
 PrefabInstance:
@@ -1225,6 +1296,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1507805926}
+  - {fileID: 1297618155}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1944232962
@@ -1296,6 +1368,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6bca31a069221b45be3ce4ff7fa08bb, type: 3}
+--- !u!82 &1944232963 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2355076184723950653, guid: c6bca31a069221b45be3ce4ff7fa08bb, type: 3}
+  m_PrefabInstance: {fileID: 1944232962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1314,4 +1391,3 @@ SceneRoots:
   - {fileID: 1420688350}
   - {fileID: 1801037513}
   - {fileID: 444994110}
-  - {fileID: 1297618154}

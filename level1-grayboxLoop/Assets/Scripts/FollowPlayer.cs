@@ -1,6 +1,8 @@
 using UnityEngine;
 
-//allow the camera to follow the player
+/// <summary>
+/// allow the camera to follow the player
+/// </summary>
 public class FollowPlayer : MonoBehaviour
 {
     public Transform player;

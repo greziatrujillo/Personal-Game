@@ -22,6 +22,8 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private AudioClip loseLevelClip;
     [SerializeField] private AudioSource backgroundMusicSource;
 
+    [SerializeField] private string nextLevel;
+
     void Start()
     {
         maxHp = hp;
@@ -53,7 +55,10 @@ public class RoundManager : MonoBehaviour
 
     private void LoadNextScene()
     {
-        SceneLoader.Load("MainMenu");
+        if (string.IsNullOrEmpty(nextLevel))
+            SceneManager.LoadScene("MainMenu");
+        else
+            SceneLoader.Load(nextLevel);
     }
 
     public void ReceiveDamage(int d)
